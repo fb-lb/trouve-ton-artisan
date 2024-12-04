@@ -1,0 +1,19 @@
+<header class="p-6 medium:px-10 medium:py-9 large:px-16 large:py-12 flex max-medium:flex-col medium:justify-between w-full medium:items-center">
+  <div class=" flex justify-between items-center">
+    <a href=""><img class="w-56 medium:w-80" src="assets/images/logo.webp" alt="Logo du site composé du texte trouve ton artisan avec la région Auvergne Rhône Alpes"></a>
+    <i class="fa-solid fa-magnifying-glass fa-xl text-secondary medium:hidden" (click)="displayElement('search-bar')"></i>
+    <i class="fa-solid fa-bars fa-xl text-secondary medium:hidden" (click)="displayElement('menu')"></i>
+  </div>
+  <div id="search-bar" class="hidden medium:flex medium:justify-between medium:items-center mx-6 bg-primary medium:mx-8 max-medium:mt-6 w-60 h-fit px-4 py-1 large:px-6 large:py-3 border-2 border-secondary rounded-full">
+    <input class="bg-primary w-[85%] focus:outline-none" type="text" placeholder="Rechercher">
+    <i class="fa-solid fa-magnifying-glass text-secondary pr-1"></i>
+  </div>
+  <nav id="menu" class="hidden text-dark max-medium:mt-6 max-medium:text-right medium:block">
+    <ul class="font-graphik text-base medium:text-lg large:text-xl font-medium medium:w-60 medium:flex medium:flex-wrap medium:justify-between medium:gap-8 large:flex-nowrap large:w-full">
+      <li class="max-medium:pb-1 medium:w-[97px] medium:text-center large:w-fit hover:text-secondary active:text-secondary active:underline active:decoration-secondary"><a href="#">Bâtiment</a></li>
+      <li class="max-medium:pb-1 medium:w-[110px] medium:text-center large:w-fit hover:text-secondary active:text-secondary active:underline active:decoration-secondary"><a href="#">Services</a></li>
+      <li class="max-medium:pb-1 hover:text-secondary active:text-secondary active:underline active:decoration-secondary"><a href="#">Fabrication</a></li>
+      <li class="max-medium:pb-1 hover:text-secondary active:text-secondary active:underline active:decoration-secondary"><a href="#">Alimentation</a></li>
+    </ul>
+  </nav>
+</header>
