@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     screens: {
       'medium': '769px',
-      'large': '993px'
+      'large': '1024px'
     },
     fontFamily: {
       'graphik': ['Graphik', 'Arial', 'sans-serif']
