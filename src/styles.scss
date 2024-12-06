@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 400;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_regular.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_regular.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 500;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_medium.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_medium.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_medium.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 600;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_semibold.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_semibold.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_semibold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 700;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_bold.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_bold.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_bold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 800;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_black.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_black.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_black.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Graphik';
+        font-style: normal;
+        font-weight: 900;
+        src:
+            url('/assets/fonts/graphik_woff/graphik_super.woff') format('woff'),
+            url('/assets/fonts/graphik_otf/graphik_super.otf') format('opentype'),
+            url('/assets/fonts/graphik_ttf/graphik_super.ttf') format('truetype');
+    }
+  }
