@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { CardTopCraftsmanService } from '../card-top-craftsman.service';
 
 @Component({
   selector: 'app-card-top-craftsman',
@@ -7,20 +6,10 @@ import { CardTopCraftsmanService } from '../card-top-craftsman.service';
   styleUrl: './card-top-craftsman.component.scss',
 })
 export class CardTopCraftsmanComponent {
- 
-  @Input() topPosition = "";
-  topRank:number = 0;
-  
-  data: any[] = [];
-  dataTop:any[] = [];
 
-  constructor(private craftsmanService:CardTopCraftsmanService) {}
-  async ngOnInit():Promise<void> {
-    this.data = await this.craftsmanService.getDataCrafstman();
-    this.dataTop = [...this.data];
-    this.dataTop = this.dataTop.filter((craftsman) => craftsman.top == true);
+  @Input() craftsmanData:any = {};
 
-    this.topRank = parseInt(this.topPosition);
+  ngOnInit():void {
     this.setStarFilling();
   }
 
@@ -51,9 +40,10 @@ export class CardTopCraftsmanComponent {
       fill: "0%"
     }
   ];
-
+  
   setStarFilling() {
-    let craftsmanNote = parseFloat(this.dataTop[this.topRank].note);
+    let craftsmanNote = parseFloat(this.craftsmanData.note);
+    console.log(craftsmanNote);
     for (let i=0; i < this.stars.length; i++) {
       if (i+1 <= craftsmanNote) {
         this.stars[i].fill = "100%";
@@ -64,5 +54,4 @@ export class CardTopCraftsmanComponent {
       }
     }
   }
-  
 }
