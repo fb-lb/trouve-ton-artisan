@@ -1,0 +1,28 @@
+<main class="font-graphik">
+    <h1 class="bg-primary pt-9 medium:pt-12 large:pt-16 pb-10 medium:pb-0 large:pb-3 text-center text-4xl font-semibold text-secondary">Les artisans de la région</h1>
+    <div class="medium:hidden px-6 py-8 gap-10 flex flex-col items-center">
+        <div class="w-full gap-5 flex flex-col items-center">
+            <h2 class="text-lg font-medium">Filtrer par catégorie</h2>
+            <div class="w-full flex flex-col gap-5">
+                <div class="flex justify-between">
+                    <button id="button-Bâtiment" class="transition-all border-black border-2 rounded-full px-9 py-1 w-28 box-content hover:bg-primary" type="button" (click)="setCategorySelected('Bâtiment')">Bâtiment</button>
+                    <button id="button-Services" class="transition-all border-black border-2 rounded-full px-9 py-1 w-28 box-content hover:bg-primary" type="button" (click)="setCategorySelected('Services')">Services</button>
+                </div>
+                <div class="flex justify-between">
+                    <button id="button-Fabrication" class="transition-all border-black border-2 rounded-full px-9 py-1 w-28 box-content hover:bg-primary" type="button" (click)="setCategorySelected('Fabrication')">Fabrication</button>
+                    <button id="button-Alimentation" class="transition-all border-black border-2 rounded-full px-9 py-1 w-28 box-content hover:bg-primary" type="button" (click)="setCategorySelected('Alimentation')">Alimentation</button>
+                </div>
+            </div>
+        </div>
+        <div class="medium:hidden bg-primary w-full flex justify-between items-center rounded-full px-6 py-3">
+            <input class="w-full bg-primary" type="text" placeholder="Rechercher">
+            <i class="fa-solid fa-magnifying-glass text-secondary pr-1"></i>
+        </div>
+    </div>
+    <div class="bg-primary px-6 medium:px-10 large:px-24 py-16 flex flex-wrap justify-center small:justify-between gap-8">
+        <app-card-list-craftsman 
+            *ngFor="let craftsman of (allData | filterByCategory : currentCategory); trackBy: craftsmanId"
+            [craftsmanData]="craftsman"
+        ></app-card-list-craftsman>
+    </div>
+</main>

@@ -1,0 +1,30 @@
+<div class="transition-all w-[150px] medium:w-[250px] large:w-[280px] h-[265px] medium:h-[220px] large:h-[250px] box-content bg-white  font-graphik border-secondary border-2 rounded-3xl px-5 medium:px-9 py-2.5 medium:py-5 large:py-9  flex flex-col justify-between items-center">
+    <div class="flex flex-col gap-1.5 large:gap-3.5">
+        <h3 class="text-secondary text-center font-semibold text-xl medium:text-[1.6rem] large:text-[1.66rem]">{{craftsmanData.name}}</h3>
+        <div class="flex justify-center gap-2">
+            <p class="tracking-widest text-dark">{{(craftsmanData.note).replace(".", ",")}}/5</p>
+            <div class="flex items-center" >
+                    <svg *ngFor="let star of (stars); trackBy: starId" class="w-[18px] h-[18px] medium:h-[25px] medium:w-[25px] mx-[-1px]" version="1.1" [id]="'Capa_'+star.id" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-4.79 -4.79 57.52 57.52" xml:space="preserve" fill="#db1a1a" stroke="#db1a1a" stroke-width="2.6846400000000004">
+                        <defs>
+                            <linearGradient [id]=star.id+craftsmanData.id>
+                            <stop [attr.offset]=star.fill stop-color="#0074c7" />
+                            <stop offset="0%" stop-color="white" />
+                            </linearGradient>
+                        </defs>
+                        <path class="stroke-secondary stroke-[4.5]" [style.fill]="'url(#'+star.id+craftsmanData.id+')'" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757 c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042 c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685 c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528 c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z"></path>
+                    </svg>
+            </div>
+        </div>
+    </div>
+    <div class="flex max-medium:flex-col gap-y-4 medium:w-full text-dark medium:justify-between">
+        <section class="flex flex-col items-center">
+            <h4 class="font-medium large:text-lg">Spécialité</h4>
+            <p>{{craftsmanData.specialty}}</p>
+        </section>
+        <section class="text-dark flex flex-col items-center">
+            <h4 class="font-medium large:text-lg">Localisation</h4>
+            <p>{{craftsmanData.location}}</p>
+        </section>
+    </div>
+   <a class="text-center medium:text-lg justify-self-end bg-secondary hover:bg-tertiary text-white rounded-full max-medium:w-full py-1 medium:px-9 medium:py-2 large:px-20 large:py-4" href="#">Voir la fiche</a>
+</div>

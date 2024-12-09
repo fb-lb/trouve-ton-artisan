@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CardTopCraftsmanComponent } from './card-top-craftsman/card-top-craftsman.component';
+import { CraftsmanListComponent } from './craftsman-list/craftsman-list.component';
+import { CardListCraftsmanComponent } from './card-list-craftsman/card-list-craftsman.component';
+import { FilterByCategoryPipe } from './filter-by-category.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { CardTopCraftsmanComponent } from './card-top-craftsman/card-top-craftsm
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CardTopCraftsmanComponent
+    CardTopCraftsmanComponent,
+    CraftsmanListComponent,
+    CardListCraftsmanComponent,
+    FilterByCategoryPipe
   ],
   imports: [
     BrowserModule,

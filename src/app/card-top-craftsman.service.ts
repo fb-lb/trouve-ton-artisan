@@ -5,15 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class CardTopCraftsmanService {
 
+  dataCraftsman = this.getData();
+  
   // Faire un try/catch
-  async getDataCrafstman() {
-    try {
-      let dataJSON = await fetch('/assets/datas.json');
-      let dataCraftsman = await dataJSON.json();
-      return dataCraftsman;
-    } catch (error) {
-      console.error(error);
-    }
+  async getData() {
+        try {
+          let dataJSON = await fetch('/assets/datas.json');
+          let allData = await dataJSON.json();
+          return allData;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+  
+  getDataCrafstman() {
+    return this.dataCraftsman;
   }
 
   constructor() { }

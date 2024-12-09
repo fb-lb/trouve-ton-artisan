@@ -9,9 +9,9 @@
         <h1>Comment trouver mon artisan ?</h1>
     </div>
     <div class="bg-primary px-6  pt-5 pb-16 medium:px-10 large:px-24 flex flex-col gap-8 items-center">
-        <h2 class="text-center font-graphik text-3xl font-semibold text-tertiray">Les trois artisans du mois</h2>
+        <h2 class="text-center font-graphik text-3xl font-semibold text-tertiary">Les trois artisans du mois</h2>
         <div class="max-w-[81rem] w-full flex max-medium:flex-col max-medium:items-center medium:flex-wrap gap-y-8 medium:gap-y-16 large:justify-between">
-            <app-card-top-craftsman *ngFor="let craftsman of topCraftsmansData"
+            <app-card-top-craftsman *ngFor="let craftsman of topCraftsmansData; trackBy : craftsmanId"
                 [craftsmanData]="craftsman"
                 [ngClass]="craftsman.id == topCraftsmansData[0].id ? 'medium:w-full medium:justify-items-center max-large:justify-items-center large:w-[33%] large:max-w-[330px]' :
                            craftsman.id == topCraftsmansData[1].id ? 'large:w-[33%] large:max-w-[330px]' :
