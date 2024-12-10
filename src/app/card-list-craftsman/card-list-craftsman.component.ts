@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-card-top-craftsman',
-  templateUrl: './card-top-craftsman.component.html',
-  styleUrl: './card-top-craftsman.component.scss',
+  selector: 'app-card-list-craftsman',
+  templateUrl: './card-list-craftsman.component.html',
+  styleUrl: './card-list-craftsman.component.scss'
 })
-export class CardTopCraftsmanComponent {
+export class CardListCraftsmanComponent {
 
   @Input() craftsmanData:any = {};
 
@@ -53,4 +53,5 @@ export class CardTopCraftsmanComponent {
       }
     }
   }
+
 }
