@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CardTopCraftsmanService } from '../card-top-craftsman.service';
 import { CategoriesService } from '../categories.service';
+import { SearchBarTextService } from '../search-bar-text.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,15 +12,26 @@ import { Subscription } from 'rxjs';
 export class CraftsmanListComponent {
 
   allData: any[] = [];
-  currentCategory:string = "";
+  currentCategory: string = "";
+  inputValue: string = "";
+  currentSearchText: string = "";
   private categorySubscription: Subscription = new Subscription();
+  private searchTextSubscription: Subscription = new Subscription();
 
-  constructor(private craftsmanService:CardTopCraftsmanService, private categoriesService:CategoriesService) {}
+  constructor(
+    private craftsmanService:CardTopCraftsmanService,
+    private categoriesService:CategoriesService,
+    private searchBarTextService:SearchBarTextService
+  ) {}
+
   async ngOnInit():Promise<void> {
-    this.allData = await this.craftsmanService.getDataCrafstman();
+    this.allData  = await this.craftsmanService.getDataCrafstman();
     this.categorySubscription = this.categoriesService.categorySelected$.subscribe(value => {
       this.currentCategory = value;
       this.setActiveClassButton(value);
+    });
+    this.searchTextSubscription = this.searchBarTextService.searchText$.subscribe(value => {
+      this.currentSearchText = value;
     })
   }
 
@@ -27,9 +39,16 @@ export class CraftsmanListComponent {
     if (this.categorySubscription) {
       this.categorySubscription.unsubscribe();
     }
+    if (this.searchTextSubscription) {
+      this.searchTextSubscription.unsubscribe();
+    }
   }
 
-  buttonId:any = ['button-Bâtiment', 'button-Services', 'button-Fabrication', 'button-Alimentation'];
+  setSearchBarText() {
+    this.searchBarTextService.setSearchText(this.inputValue);
+  }
+
+  buttonId:any[] = ['button-Bâtiment', 'button-Services', 'button-Fabrication', 'button-Alimentation'];
 
   setActiveClassButton(newId: string) {
     this.buttonId.forEach((id:string) => {

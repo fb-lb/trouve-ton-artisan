@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { CardTopCraftsmanComponent } from './card-top-craftsman/card-top-craftsm
 import { CraftsmanListComponent } from './craftsman-list/craftsman-list.component';
 import { CardListCraftsmanComponent } from './card-list-craftsman/card-list-craftsman.component';
 import { FilterByCategoryPipe } from './filter-by-category.pipe';
+import { FilterByTextPipe } from './filter-by-text.pipe';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { FilterByCategoryPipe } from './filter-by-category.pipe';
     CardTopCraftsmanComponent,
     CraftsmanListComponent,
     CardListCraftsmanComponent,
-    FilterByCategoryPipe
+    FilterByCategoryPipe,
+    FilterByTextPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

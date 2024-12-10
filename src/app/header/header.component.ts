@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from '../categories.service';
+import { SearchBarTextService } from '../search-bar-text.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -8,8 +9,9 @@ import { Subscription } from 'rxjs';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  constructor(private categoryService: CategoriesService) {}
+  constructor(private categoryService: CategoriesService, private searchBarTextService: SearchBarTextService) {}
 
+  inputValue: string = "";
   currentCategory:string  = "";
   private categorySubscription: Subscription = new Subscription();
 
@@ -17,7 +19,7 @@ export class HeaderComponent {
     this.categorySubscription = this.categoryService.categorySelected$.subscribe(value => {
       this.currentCategory = value;
       this.setActiveClassNavLink(value);
-    })
+    });
   }
 
   ngOnDestroy():void {
@@ -35,6 +37,10 @@ export class HeaderComponent {
       }
     });
     document.getElementById('link-' + newId)?.classList.add('active');
+  }
+
+  setSearchBarText() {
+    this.searchBarTextService.setSearchText(this.inputValue);
   }
 
   setCategory(categorySelected: string) {
