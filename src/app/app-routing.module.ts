@@ -7,6 +7,7 @@ import { CraftsmanComponent } from './craftsman/craftsman.component';
 import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'artisan/:id', component:CraftsmanComponent},
   {path:'mentions-legales', component:LegalMentionsComponent},
   {path:'gestion-des-donnees', component:RgpdComponent},
-  {path:'accessibilite', component:AccessibilityComponent}
+  {path:'accessibilite', component:AccessibilityComponent},
+  {path:'cookies', component:CookiesComponent}
 ];
 
 @NgModule({

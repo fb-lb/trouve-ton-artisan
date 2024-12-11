@@ -17,6 +17,7 @@ import { CraftsmanComponent } from './craftsman/craftsman.component';
 import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AccessibilityComponent } from './accessibility/accessibility.component'
     CraftsmanComponent,
     LegalMentionsComponent,
     RgpdComponent,
-    AccessibilityComponent
+    AccessibilityComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,
