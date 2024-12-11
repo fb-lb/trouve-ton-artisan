@@ -15,6 +15,7 @@ import { FilterByCategoryPipe } from './filter-by-category.pipe';
 import { FilterByTextPipe } from './filter-by-text.pipe';
 import { CraftsmanComponent } from './craftsman/craftsman.component';
 import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
+import { RgpdComponent } from './rgpd/rgpd.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LegalMentionsComponent } from './legal-mentions/legal-mentions.componen
     FilterByCategoryPipe,
     FilterByTextPipe,
     CraftsmanComponent,
-    LegalMentionsComponent
+    LegalMentionsComponent,
+    RgpdComponent
   ],
   imports: [
     BrowserModule,

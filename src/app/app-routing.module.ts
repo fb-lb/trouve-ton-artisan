@@ -5,12 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { CraftsmanListComponent } from './craftsman-list/craftsman-list.component';
 import { CraftsmanComponent } from './craftsman/craftsman.component';
 import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
+import { RgpdComponent } from './rgpd/rgpd.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'liste-des-artisans', component:CraftsmanListComponent},
   {path:'artisan/:id', component:CraftsmanComponent},
-  {path:'mentions-legales', component:LegalMentionsComponent}
+  {path:'mentions-legales', component:LegalMentionsComponent},
+  {path:'gestion-des-donnees', component:RgpdComponent}
 ];
 
 @NgModule({
