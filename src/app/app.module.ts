@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { CraftsmanListComponent } from './craftsman-list/craftsman-list.componen
 import { CardListCraftsmanComponent } from './card-list-craftsman/card-list-craftsman.component';
 import { FilterByCategoryPipe } from './filter-by-category.pipe';
 import { FilterByTextPipe } from './filter-by-text.pipe';
+import { CraftsmanComponent } from './craftsman/craftsman.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { FilterByTextPipe } from './filter-by-text.pipe';
     CraftsmanListComponent,
     CardListCraftsmanComponent,
     FilterByCategoryPipe,
-    FilterByTextPipe
+    FilterByTextPipe,
+    CraftsmanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
