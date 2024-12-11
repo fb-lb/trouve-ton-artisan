@@ -8,6 +8,7 @@ import { LegalMentionsComponent } from './legal-mentions/legal-mentions.componen
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'mentions-legales', component:LegalMentionsComponent},
   {path:'gestion-des-donnees', component:RgpdComponent},
   {path:'accessibilite', component:AccessibilityComponent},
-  {path:'cookies', component:CookiesComponent}
+  {path:'cookies', component:CookiesComponent},
+  {path:'**', component:PageNotFoundComponent}
 ];
 
 @NgModule({

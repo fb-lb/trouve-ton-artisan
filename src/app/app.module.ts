@@ -18,6 +18,7 @@ import { LegalMentionsComponent } from './legal-mentions/legal-mentions.componen
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CookiesComponent } from './cookies/cookies.component';
     LegalMentionsComponent,
     RgpdComponent,
     AccessibilityComponent,
-    CookiesComponent
+    CookiesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
