@@ -14,6 +14,10 @@ import { CardListCraftsmanComponent } from './card-list-craftsman/card-list-craf
 import { FilterByCategoryPipe } from './filter-by-category.pipe';
 import { FilterByTextPipe } from './filter-by-text.pipe';
 import { CraftsmanComponent } from './craftsman/craftsman.component';
+import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
+import { RgpdComponent } from './rgpd/rgpd.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { CraftsmanComponent } from './craftsman/craftsman.component';
     CardListCraftsmanComponent,
     FilterByCategoryPipe,
     FilterByTextPipe,
-    CraftsmanComponent
+    CraftsmanComponent,
+    LegalMentionsComponent,
+    RgpdComponent,
+    AccessibilityComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,
