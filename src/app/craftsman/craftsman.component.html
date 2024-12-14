@@ -38,7 +38,7 @@
     </div>
     <div class="bg-primary text-dark px-6 medium:px-10 large:px-24 py-9 large:py-16 flex flex-col items-center gap-8 large:gap-14">
         <h2 class="text-xl text-center medium:text-2xl large:text-3xl">Formulaire de contact</h2>
-        <form class="w-full flex flex-col gap-3 large:gap-5 items-end" [formGroup]="form" action="#" method="post">
+        <form class="w-full flex flex-col gap-3 large:gap-5 items-end" [formGroup]="form" (ngSubmit)="sendMail()">
             <div class="w-full max-w-[calc(50%+150px)] medium:max-w-[calc(50%+180px)]">
                 <div class="flex gap-7 items-center">
                     <label class="w-[66px]" for="last-name">Nom</label>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <button class="bg-secondary self-center text-white mt-4 large:mt-8 pt-1.5 large:pt-3 pb-2 large:pb-4 px-12 large:px-20 rounded-full hover:bg-tertiary" type="button" (click)="sendInvalidForm()" *ngIf="form.invalid">Envoyer</button>
-            <button class="bg-secondary self-center text-white mt-4 large:mt-8 pt-1.5 large:pt-3 pb-2 large:pb-4 px-12 large:px-20 rounded-full hover:bg-tertiary" type="submit" (click)="sendValidForm()" *ngIf="form.valid">Envoyer</button>
+            <button class="bg-secondary self-center text-white mt-4 large:mt-8 pt-1.5 large:pt-3 pb-2 large:pb-4 px-12 large:px-20 rounded-full hover:bg-tertiary" type="submit" *ngIf="form.valid">Envoyer</button>
             <p class="text-danger self-center" *ngIf="form.invalid && trySendInvalidForm">Veuillez remplir intégralement le formulaire</p>
         </form>
     </div>
