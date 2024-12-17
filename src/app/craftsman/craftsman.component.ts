@@ -1,25 +1,29 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CardTopCraftsmanService } from '../card-top-craftsman.service';
+import { CraftsmanDataService } from '../craftsman-data.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-craftsman',
   templateUrl: './craftsman.component.html',
-  styleUrl: './craftsman.component.scss'
+  styleUrl: './craftsman.component.scss',
 })
 export class CraftsmanComponent {
-
   craftsman: any = {};
-  craftsmanId: string | null = "";
-  note: string = "";
+  craftsmanId: string | null = '';
+  note: string = '';
 
-  constructor(private activatedRoute:ActivatedRoute, private craftsmanService:CardTopCraftsmanService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private craftsmanService: CraftsmanDataService,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.craftsmanId = this.activatedRoute.snapshot.params['id'];
-    this.craftsman = (await this.craftsmanService.getDataCrafstman()).find((x:any) => x.id == this.craftsmanId);
+    this.craftsman = (await this.craftsmanService.getDataCrafstman()).find(
+      (x: any) => x.id == this.craftsmanId,
+    );
     this.note = this.craftsman.note.replace('.', ',');
     this.setStarFilling();
   }
@@ -29,22 +33,36 @@ export class CraftsmanComponent {
   //---------------
 
   form = new FormGroup({
-    lastName: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.pattern('[a-zA-Zéèêàîùôçïäâëüöœ -]*')]),
-    firstName: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.pattern('[a-zA-Zéèêàîùôçïäâëüöœ -]*')]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(20),
+      Validators.pattern('[a-zA-Zéèêàîùôçïäâëüöœ -]*'),
+    ]),
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(20),
+      Validators.pattern('[a-zA-Zéèêàîùôçïäâëüöœ -]*'),
+    ]),
     mail: new FormControl('', [Validators.required, Validators.email]),
-    subject: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-    message: new FormControl('', [Validators.required, Validators.maxLength(1000)])
-  })
+    subject: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(60),
+    ]),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(1000),
+    ]),
+  });
 
   // This is used to control the display of <p> below the submitting button
   trySendInvalidForm = false;
-  
+
   sendInvalidForm() {
     this.trySendInvalidForm = true;
   }
 
   // This is used as parameter in emailjs.send()
-  templateParams = () => { 
+  templateParams = () => {
     return {
       craftsmanName: this.craftsman.name,
       craftsmanMail: this.craftsman.email,
@@ -52,20 +70,32 @@ export class CraftsmanComponent {
       firstName: this.form.value.firstName,
       mail: this.form.value.mail,
       subject: this.form.value.subject,
-      message: this.form.value.message
+      message: this.form.value.message,
     };
-  }
+  };
 
   async sendMail() {
     try {
       this.trySendInvalidForm = false;
       emailjs.init('fAw1TIDke6CrQ5EbS');
-      let response = await emailjs.send('service_yxbtwvf', 'template_91zwpnn', this.templateParams());
-      let autoReply = await emailjs.send('service_yxbtwvf', 'template_vozudmx', this.templateParams());
+      let response = await emailjs.send(
+        'service_yxbtwvf',
+        'template_91zwpnn',
+        this.templateParams(),
+      );
+      let autoReply = await emailjs.send(
+        'service_yxbtwvf',
+        'template_vozudmx',
+        this.templateParams(),
+      );
       this.form.reset();
-      alert("Merci, votre message a bien été envoyé. Un mail récapitulatif vous a été envoyé.");
+      alert(
+        'Merci, votre message a bien été envoyé. Un mail récapitulatif vous a été envoyé.',
+      );
     } catch (error) {
-      alert("Le service d'envoie d'email est indisponible pour le moment. Nous tentons de le rétablir au plus vite. Merci de votre compréhension.");
+      alert(
+        "Le service d'envoie d'email est indisponible pour le moment. Nous tentons de le rétablir au plus vite. Merci de votre compréhension.",
+      );
       // transmission of the error report to the Auvergne Rhône Alpes regional office
     }
   }
@@ -79,38 +109,38 @@ export class CraftsmanComponent {
     return star.id;
   }
 
-  stars:any[] = [
+  stars: any[] = [
     {
-      id: "star-1",
-      fill: "0%"
+      id: 'star-1',
+      fill: '0%',
     },
     {
-      id: "star-2",
-      fill: "0%"
+      id: 'star-2',
+      fill: '0%',
     },
     {
-      id: "star-3",
-      fill: "0%"
+      id: 'star-3',
+      fill: '0%',
     },
     {
-      id: "star-4",
-      fill: "0%"
+      id: 'star-4',
+      fill: '0%',
     },
     {
-      id: "star-5",
-      fill: "0%"
-    }
+      id: 'star-5',
+      fill: '0%',
+    },
   ];
-  
+
   setStarFilling() {
     let craftsmanNote = parseFloat(this.craftsman.note);
-    for (let i=0; i < this.stars.length; i++) {
-      if (i+1 <= craftsmanNote) {
-        this.stars[i].fill = "100%";
+    for (let i = 0; i < this.stars.length; i++) {
+      if (i + 1 <= craftsmanNote) {
+        this.stars[i].fill = '100%';
       } else if (craftsmanNote - i > 0) {
-        let decimal = 1 - (i+1-craftsmanNote);
-        decimal = (decimal * 80) + 10; // Not an actual percentage but the obtained value is more suited for UI/UX
-        this.stars[i].fill = decimal + "%";
+        let decimal = 1 - (i + 1 - craftsmanNote);
+        decimal = decimal * 80 + 10; // Not an actual percentage but the obtained value is more suited for UI/UX
+        this.stars[i].fill = decimal + '%';
       }
     }
   }

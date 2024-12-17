@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CardTopCraftsmanService {
-
+export class CraftsmanDataService {
   dataCraftsman = this.getData();
-  
+
   // Faire un try/catch
   async getData() {
     try {
@@ -17,10 +16,10 @@ export class CardTopCraftsmanService {
       console.error(error);
     }
   }
-  
+
   getDataCrafstman() {
     return this.dataCraftsman;
   }
 
-  constructor() { }
+  constructor() {}
 }
