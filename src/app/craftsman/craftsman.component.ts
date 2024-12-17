@@ -25,7 +25,6 @@ export class CraftsmanComponent {
       (x: any) => x.id == this.craftsmanId,
     );
     this.note = this.craftsman.note.replace('.', ',');
-    this.setStarFilling();
   }
 
   //---------------
@@ -131,17 +130,4 @@ export class CraftsmanComponent {
       fill: '0%',
     },
   ];
-
-  setStarFilling() {
-    let craftsmanNote = parseFloat(this.craftsman.note);
-    for (let i = 0; i < this.stars.length; i++) {
-      if (i + 1 <= craftsmanNote) {
-        this.stars[i].fill = '100%';
-      } else if (craftsmanNote - i > 0) {
-        let decimal = 1 - (i + 1 - craftsmanNote);
-        decimal = decimal * 80 + 10; // Not an actual percentage but the obtained value is more suited for UI/UX
-        this.stars[i].fill = decimal + '%';
-      }
-    }
-  }
 }

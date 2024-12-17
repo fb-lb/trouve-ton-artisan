@@ -19,6 +19,7 @@ import { RgpdComponent } from './rgpd/rgpd.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StarFillingPipe } from './star-filling.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RgpdComponent,
     AccessibilityComponent,
     CookiesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StarFillingPipe
   ],
   imports: [
     BrowserModule,
