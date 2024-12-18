@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CraftsmanDataService } from '../craftsman-data.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-craftsman',
@@ -76,15 +77,15 @@ export class CraftsmanComponent {
   async sendMail() {
     try {
       this.trySendInvalidForm = false;
-      emailjs.init('fAw1TIDke6CrQ5EbS');
+      emailjs.init(environment.apiKeyEmailjs);
       let response = await emailjs.send(
-        'service_yxbtwvf',
-        'template_91zwpnn',
+        environment.serviceIdEmailjs,
+        environment.templateIdToCraftsmanEmailjs,
         this.templateParams(),
       );
       let autoReply = await emailjs.send(
-        'service_yxbtwvf',
-        'template_vozudmx',
+        environment.serviceIdEmailjs,
+        environment.templateIdAutoReplyEmailjs,
         this.templateParams(),
       );
       this.form.reset();

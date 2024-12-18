@@ -5,7 +5,7 @@
         <source media="(max-width: 768px)" srcset="/assets/images/landscape_sm.webp" />
         <img class="w-full" src="/assets/images/landscape_lg.webp" alt="Photo d'un lac avec au premier plan une dizaine d'épis de blé sur la gauche et à l'arrière plan des montagnes et le ciel est dégagé.">
     </picture>
-    <div class="px-6 medium:px-10 large:px-24 pt-5 pb-16 flex flex-col gap-10 items-center">
+    <section class="px-6 medium:px-10 large:px-24 pt-5 pb-16 flex flex-col gap-10 items-center">
         <h1 class="text-center text-3xl font-semibold text-tertiary">Comment trouver mon artisan ?</h1>
         <div class="w-full flex max-medium:flex-col medium:flex-wrap medium:justify-between max-large:gap-5 items-center">
             <div class="border-2 border-secondary w-full max-w-[430px] medium:w-[47%] medium:h-[238px] large:w-[24%] large:h-[298px] p-3 rounded-2xl flex flex-col gap-5 medium:gap-[20%]">
@@ -47,8 +47,8 @@
                 <img class="w-[95%] max-w-[100px] self-center" src="/assets/images/mail_drawing.webp" alt="Dessin d'une enveloppe avec une feuille de papier qui sort de cette enveloppe. Le signe @ est dessiné sur cette feuille.">
             </div>
         </div>
-    </div>
-    <div class="bg-primary px-6 pt-5 pb-16 medium:px-10 large:px-24 flex flex-col gap-8 items-center">
+    </section>
+    <section class="bg-primary px-6 pt-5 pb-16 medium:px-10 large:px-24 flex flex-col gap-8 items-center">
         <h2 class="text-center text-3xl font-semibold text-tertiary">Les trois artisans du mois</h2>
         <div class="max-w-[81rem] w-full flex max-medium:flex-col max-medium:items-center medium:flex-wrap gap-y-8 medium:gap-y-16 large:justify-between">
             <app-card-top-craftsman *ngFor="let craftsman of topCraftsmansData; trackBy : craftsmanId"
@@ -58,5 +58,5 @@
                            craftsman.id == topCraftsmansData[2].id ? 'medium:ml-[auto] large:ml-0 large:w-[33%] large:max-w-[330px]' : ''"
             ></app-card-top-craftsman>
         </div>
-    </div>
+    </section>
 </main>

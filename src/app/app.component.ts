@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+//import { Component } from '@angular/core';
+
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,4 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'trouve-ton-artisan';
 }
