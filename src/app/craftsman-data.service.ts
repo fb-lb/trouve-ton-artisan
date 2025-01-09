@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class CraftsmanDataService {
   dataCraftsman = this.getData();
 
-  // Faire un try/catch
   async getData() {
     try {
       let dataJSON = await fetch('/assets/datas.json');
       let allData = await dataJSON.json();
       return allData;
     } catch (error) {
-      console.error(error);
+      alert('Le site web est malheureusement indisponible pour le moment, nous faisons tout le nécessaire pour le remettre en service. Veuillez nous excuser pour la gêne occasionnée.')
+      // transmission of the error report to the Auvergne Rhône Alpes regional office
     }
   }
 

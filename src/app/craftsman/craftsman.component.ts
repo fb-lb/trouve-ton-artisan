@@ -56,7 +56,6 @@ export class CraftsmanComponent {
 
   // This is used to control the display of <p> below the submitting button
   trySendInvalidForm = false;
-
   sendInvalidForm() {
     this.trySendInvalidForm = true;
   }
@@ -74,6 +73,7 @@ export class CraftsmanComponent {
     };
   };
 
+  // Form submission
   async sendMail() {
     try {
       this.trySendInvalidForm = false;
@@ -89,13 +89,9 @@ export class CraftsmanComponent {
         this.templateParams(),
       );
       this.form.reset();
-      alert(
-        'Merci, votre message a bien été envoyé. Un mail récapitulatif vous a été envoyé.',
-      );
+      alert('Merci, votre message a bien été envoyé. Un mail récapitulatif vous a été envoyé.');
     } catch (error) {
-      alert(
-        "Le service d'envoie d'email est indisponible pour le moment. Nous tentons de le rétablir au plus vite. Merci de votre compréhension.",
-      );
+      alert("Le service d'envoi d'email est indisponible pour le moment. Nous tentons de le rétablir au plus vite. Merci de votre compréhension.");
       // transmission of the error report to the Auvergne Rhône Alpes regional office
     }
   }
