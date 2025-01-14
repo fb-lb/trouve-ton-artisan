@@ -35,7 +35,7 @@
       <p class="text-right text-xl font-medium text-secondary medium:text-2xl large:text-3xl">{{ craftsman.specialty }}</p>
     </div>
   </div>
-  <section class="flex gap-8 px-6 py-6 max-medium:flex-col medium:justify-between medium:gap-16 medium:px-10 medium:py-8 large:gap-32 large:px-24 large:py-16">
+  <div class="flex gap-8 px-6 py-6 max-medium:flex-col medium:justify-between medium:gap-16 medium:px-10 medium:py-8 large:gap-32 large:px-24 large:py-16">
     <article class="flex flex-col gap-3 medium:gap-5 large:max-w-[400px]">
       <h2 class="text-center text-xl font-medium text-dark medium:text-2xl large:text-3xl">Présentation</h2>
       <p class="text-center text-dark large:text-left">{{ craftsman.about }}</p>
@@ -55,7 +55,7 @@
         <p *ngIf="craftsman.website == ''" class="text-center text-white medium:whitespace-nowrap">Pas de site web disponible</p>
       </article>
     </div>
-  </section>
+  </div>
   <section class="flex flex-col items-center gap-8 bg-primary px-6 py-9 text-dark medium:px-10 large:gap-14 large:px-24 large:py-16">
     <h2 class="text-center text-xl medium:text-2xl large:text-3xl">Formulaire de contact</h2>
     <form class="flex w-full flex-col items-end gap-3 large:gap-5" [formGroup]="form" (ngSubmit)="sendMail()">
@@ -68,7 +68,7 @@
             name="last-name"
             id="last-name"
             formControlName="lastName"
-          />
+          >
         </div>
         <div class="pl-[100px] text-danger" *ngIf="form.get('lastName')?.invalid && (!form.get('lastName')?.pristine || form.get('lastName')?.touched)">
           <p *ngIf="form.get('lastName')?.hasError('required')">Requis</p>
@@ -85,7 +85,7 @@
             name="first-name"
             id="first-name"
             formControlName="firstName"
-          />
+          >
         </div>
         <div class="pl-[100px] text-danger" *ngIf="form.get('firstName')?.invalid && (!form.get('firstName')?.pristine || form.get('firstName')?.touched)">
           <p *ngIf="form.get('firstName')?.hasError('required')">Requis</p>
@@ -102,7 +102,7 @@
             name="mail"
             id="mail"
             formControlName="mail"
-          />
+          >
         </div>
         <div class="pl-[100px] text-danger" *ngIf="form.get('mail')?.invalid && (!form.get('mail')?.pristine || form.get('mail')?.touched)">
           <p *ngIf="form.get('mail')?.hasError('required')">Requis</p>
@@ -118,7 +118,7 @@
             name="subject"
             id="subject"
             formControlName="subject"
-          />
+          >
         </div>
         <div class="pl-[100px] text-danger" *ngIf="form.get('subject')?.invalid && (!form.get('subject')?.pristine || form.get('subject')?.touched)">
           <p *ngIf="form.get('subject')?.hasError('required')">Requis</p>
