@@ -1,6 +1,25 @@
 # TrouveTonArtisan
 
+The aim of this project is to develop a website for the Auvergne Rhône-Alpes region to facilitate the meeting between private customers and craftsman in this region. Private customers can make a filtered research by selecting a service category or/and by entering text.
+When they found their craftsman, they can contact him by mail using a form on our website.
+
+This project uses external technologies like :
+- TailwindCSS for the style,
+- FontAwesome for icons,
+- EmailJS to send mails to craftsman and private customers (auto-reply).
+
+Website URL : https://hyle.alwaysdata.net/
+Project repository : https://github.com/fb-lb/trouve-ton-artisan
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+
+## Recommended IDE
+
+VSCode (https://code.visualstudio.com/)
+
+## Project initialization
+
+Run `npm install` to install dependencies.
 
 ## Development server
 

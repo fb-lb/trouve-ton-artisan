@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CardTopCraftsmanService } from './card-top-craftsman.service';
+import { CraftsmanDataService } from './craftsman-data.service';
 
 describe('CardTopCraftsmanService', () => {
-  let service: CardTopCraftsmanService;
+  let service: CraftsmanDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CardTopCraftsmanService);
+    service = TestBed.inject(CraftsmanDataService);
   });
 
   it('should be created', () => {

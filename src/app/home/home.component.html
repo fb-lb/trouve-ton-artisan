@@ -1,22 +1,63 @@
-<main >
-    <picture >
-        <source media="(min-width: 1024px)" srcset="/assets/images/landscape_lg.webp" />
-        <source media="(min-width: 769px)" srcset="/assets/images/landscape_md.webp" />
-        <source media="(max-width: 768px)" srcset="/assets/images/landscape_sm.webp" />
-        <img class="w-full" src="/assets/images/landscape_lg.webp" alt="Photo d'un lac avec au premier plan une dizaine d'épis de blé sur la gauche et à l'arrière plan des montagnes et le ciel est dégagé.">
-      </picture>
-    <div class="px-6 medium:px-10 large:px-24">
-        <h1>Comment trouver mon artisan ?</h1>
-    </div>
-    <div class="bg-primary px-6  pt-5 pb-16 medium:px-10 large:px-24 flex flex-col gap-8 items-center">
-        <h2 class="text-center font-graphik text-3xl font-semibold text-tertiary">Les trois artisans du mois</h2>
-        <div class="max-w-[81rem] w-full flex max-medium:flex-col max-medium:items-center medium:flex-wrap gap-y-8 medium:gap-y-16 large:justify-between">
-            <app-card-top-craftsman *ngFor="let craftsman of topCraftsmansData; trackBy : craftsmanId"
-                [craftsmanData]="craftsman"
-                [ngClass]="craftsman.id == topCraftsmansData[0].id ? 'medium:w-full medium:justify-items-center max-large:justify-items-center large:w-[33%] large:max-w-[330px]' :
-                           craftsman.id == topCraftsmansData[1].id ? 'large:w-[33%] large:max-w-[330px]' :
-                           craftsman.id == topCraftsmansData[2].id ? 'medium:ml-[auto] large:ml-0 large:w-[33%] large:max-w-[330px]' : ''"
-            ></app-card-top-craftsman>
+<main class="font-graphik">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/assets/images/landscape_lg.webp">
+    <source media="(min-width: 769px)" srcset="/assets/images/landscape_md.webp">
+    <source media="(max-width: 768px)" srcset="/assets/images/landscape_sm.webp">
+    <img class="w-full" src="/assets/images/landscape_lg.webp" alt="Photo d'un lac avec au premier plan une dizaine d'épis de blé sur la gauche et à l'arrière plan des montagnes et le ciel est dégagé.">
+  </picture>
+  <section class="flex flex-col items-center gap-10 px-6 pb-16 pt-5 medium:px-10 large:px-24">
+    <h1 class="text-center text-3xl font-semibold text-tertiary">Comment trouver mon artisan ?</h1>
+    <div class="flex w-full items-center max-large:gap-5 max-medium:flex-col medium:flex-wrap medium:justify-between">
+      <div class="flex w-full max-w-[430px] flex-col gap-5 rounded-2xl border-2 border-secondary p-3 medium:h-[238px] medium:w-[47%] medium:gap-[20%] large:h-[298px] large:w-[24%]">
+        <div class="flex gap-4">
+          <p class="h-[30px] min-w-[30px] rounded-[50%] border-2 border-secondary bg-primary text-center font-medium text-secondary">1</p>
+          <p>Choisir la catégorie d'artisanat dans le menu</p>
         </div>
+        <picture class="w-[95%] self-center max-medium:max-w-[300px]">
+          <source media="(min-width: 1024px)" srcset="/assets/images/header_large.webp">
+          <source media="(min-width: 769px)" srcset="/assets/images/header_medium.webp">
+          <source media="(max-width: 768px)" srcset="/assets/images/header_small.webp">
+          <img src="/assets/images/header_medium.webp" alt="Capture d'écran de l'en-tête du site web avec les différents éléments du menu entourés en rouge.">
+        </picture>
+      </div>
+      <div class="flex w-full max-w-[430px] flex-col gap-5 rounded-2xl border-2 border-secondary p-3 medium:h-[238px] medium:w-[47%] large:h-[298px] large:w-[24%]">
+        <div class="flex gap-4">
+          <p class="h-[30px] min-w-[30px] rounded-[50%] border-2 border-secondary bg-primary text-center font-medium text-secondary">2</p>
+          <p>Choisir un artisan en cliquant sur "Voir la fiche"</p>
+        </div>
+        <picture class="w-[95%] self-center max-medium:max-w-[300px]">
+          <source media="(min-width: 1024px)" srcset="/assets/images/cards_large.webp">
+          <source media="(min-width: 769px)" srcset="/assets/images/cards_medium.webp">
+          <source media="(max-width: 768px)" srcset="/assets/images/cards_small.webp">
+          <img src="/assets/images/cards_medium.webp" alt="Capture d'écran de deux éléments de la liste des artisans avec le bouton voir la fiche entouré en rouge pour chacun.">
+        </picture>
+      </div>
+      <div class="flex w-full max-w-[430px] flex-col gap-5 rounded-2xl border-2 border-secondary p-3 medium:h-[421px] medium:w-[47%] large:h-[298px] large:w-[24%]">
+        <div class="flex gap-4">
+          <p class="h-[30px] min-w-[30px] rounded-[50%] border-2 border-secondary bg-primary text-center font-medium text-secondary">3</p>
+          <p>Le contacter via le formulaire de contact</p>
+        </div>
+        <img class="max-w-[300px] self-center max-large:w-[95%] large:max-h-[65%]" src="/assets/images/form.webp" alt="Capture d'écran de du formulaire de contact présent sur la fiche de chaque artisan.">
+      </div>
+      <div class="flex w-full max-w-[430px] flex-col gap-5 rounded-2xl border-2 border-secondary p-3 medium:h-[421px] medium:w-[47%] medium:gap-[20%] large:h-[298px] large:w-[24%]">
+        <div class="flex gap-4">
+          <p class="h-[30px] min-w-[30px] rounded-[50%] border-2 border-secondary bg-primary text-center font-medium text-secondary">4</p>
+          <p>Une réponse vous sera apportée sous 48h</p>
+        </div>
+        <img class="w-[95%] max-w-[100px] self-center" src="/assets/images/mail_drawing.webp" alt="Dessin d'une enveloppe avec une feuille de papier qui sort de cette enveloppe. Le signe @ est dessiné sur cette feuille.">
+      </div>
     </div>
+  </section>
+  <section class="flex flex-col items-center gap-8 bg-primary px-6 pb-16 pt-5 medium:px-10 large:px-24">
+    <h2 class="text-center text-3xl font-semibold text-tertiary">Les trois artisans du mois</h2>
+    <div class="flex w-full max-w-[81rem] gap-y-8 max-medium:flex-col max-medium:items-center medium:flex-wrap medium:gap-y-16 large:justify-between">
+      <app-card-top-craftsman
+        *ngFor="let craftsman of topCraftsmansData; trackBy: craftsmanId"
+        [craftsmanData]="craftsman"
+        [ngClass]="craftsman.id == topCraftsmansData[0].id ? 'max-large:justify-items-center medium:w-full medium:justify-items-center large:w-[33%] large:max-w-[330px]': 
+                   craftsman.id == topCraftsmansData[1].id ? 'large:w-[33%] large:max-w-[330px]': 
+                   craftsman.id == topCraftsmansData[2].id ? 'medium:ml-[auto] large:ml-0 large:w-[33%] large:max-w-[330px]': '' "
+      ></app-card-top-craftsman>
+    </div>
+  </section>
 </main>

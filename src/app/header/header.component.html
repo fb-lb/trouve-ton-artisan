@@ -1,19 +1,27 @@
-<header class="p-6 medium:px-10 medium:py-9 large:px-24 large:py-14 flex max-medium:flex-col medium:justify-between w-full medium:items-center">
-  <div class=" flex justify-between gap-7 items-center">
-    <a routerLink="/"><img class="w-56 medium:w-80" src="/assets/images/logo_website.webp" alt="Logo du site composé du texte trouve ton artisan avec la région Auvergne Rhône Alpes"></a>
-    <i class="fa-solid fa-magnifying-glass fa-xl text-secondary cursor-pointer medium:hidden" (click)="displayElement('search-bar')"></i>
-    <i class="fa-solid fa-bars fa-xl text-secondary medium:hidden cursor-pointer" (click)="displayElement('menu')"></i>
+<header class="flex w-full p-6 max-medium:flex-col medium:items-center medium:justify-between medium:px-10 medium:py-9 large:px-24 large:py-14">
+  <div class="flex items-center justify-between gap-7">
+    <img routerLink="/" class="max-small:w-[65%] small:w-56 max-w-56 medium:w-80" src="/assets/images/logo_website.webp" alt="Logo du site composé du texte trouve ton artisan avec la région Auvergne Rhône Alpes">
+    <i class="fa-solid fa-magnifying-glass fa-xl cursor-pointer text-secondary medium:hidden" (click)="displayElement('search-bar')"></i>
+    <i class="fa-solid fa-bars fa-xl cursor-pointer text-secondary medium:hidden" (click)="displayElement('menu')"></i>
   </div>
-  <div id="search-bar" class="hidden medium:flex medium:justify-between medium:items-center mx-6 bg-primary medium:mx-8 max-medium:mt-6 w-60 h-fit px-4 py-1 large:px-6 large:py-3 border-2 border-secondary rounded-full">
-    <a routerLink="/liste-des-artisans"><input class="bg-primary focus:outline-none" [(ngModel)]="inputValue" (ngModelChange)="setSearchBarText()" type="text" placeholder="Rechercher"></a>
-    <a routerLink="/liste-des-artisans"><i class="fa-solid fa-magnifying-glass text-secondary pr-1"></i></a>
+  <div id="search-bar" class="mx-6 hidden h-fit w-60 rounded-full border-2 border-secondary bg-primary px-4 py-1 max-medium:mt-6 medium:mx-8 medium:flex medium:items-center medium:justify-between large:px-6 large:py-3">
+    <input routerLink="/liste-des-artisans" class="bg-primary focus:outline-none" [(ngModel)]="inputValue" (ngModelChange)="setSearchBarText()" type="text" placeholder="Rechercher">
+    <a routerLink="/liste-des-artisans"><i class="fa-solid fa-magnifying-glass pr-1 text-secondary"></i></a>
   </div>
   <nav id="menu" class="hidden text-dark max-medium:mt-6 max-medium:text-right medium:block large:w-[52%] large:max-w-[550px]">
-    <ul class="font-graphik text-base medium:text-lg large:text-xl font-medium medium:w-60 medium:flex medium:flex-wrap medium:justify-between medium:gap-8 large:gap-3 large:flex-nowrap large:w-full">
-      <li  class="max-medium:pb-1 medium:w-[97px] medium:text-center large:w-fit" (click)="setCategory('Bâtiment')"><a id="link-Bâtiment" routerLink="/liste-des-artisans" class="hover:text-secondary">Bâtiment</a></li>
-      <li  class="max-medium:pb-1 medium:w-[110px] medium:text-center large:w-fit" (click)="setCategory('Services')"><a id="link-Services" routerLink="/liste-des-artisans" class="hover:text-secondary">Services</a></li>
-      <li  class="max-medium:pb-1"><a id="link-Fabrication" routerLink="/liste-des-artisans" (click)="setCategory('Fabrication')" class="hover:text-secondary">Fabrication</a></li>
-      <li  class="max-medium:pb-1"><a id="link-Alimentation" routerLink="/liste-des-artisans" (click)="setCategory('Alimentation')" class="hover:text-secondary">Alimentation</a></li>
+    <ul class="font-graphik text-base font-medium medium:flex medium:w-60 medium:flex-wrap medium:justify-between medium:gap-8 medium:text-lg large:w-full large:flex-nowrap large:gap-3 large:text-xl">
+      <li class="max-medium:pb-1 medium:w-[97px] medium:text-center large:w-fit" (click)="setCategory('Bâtiment')">
+        <a id="link-Bâtiment" routerLink="/liste-des-artisans" class="hover:text-secondary">Bâtiment</a>
+      </li>
+      <li class="max-medium:pb-1 medium:w-[110px] medium:text-center large:w-fit" (click)="setCategory('Services')">
+        <a id="link-Services" routerLink="/liste-des-artisans" class="hover:text-secondary">Services</a>
+      </li>
+      <li class="max-medium:pb-1">
+        <a id="link-Fabrication" routerLink="/liste-des-artisans" (click)="setCategory('Fabrication')" class="hover:text-secondary">Fabrication</a>
+      </li>
+      <li class="max-medium:pb-1">
+        <a id="link-Alimentation" routerLink="/liste-des-artisans" (click)="setCategory('Alimentation')" class="hover:text-secondary">Alimentation</a>
+      </li>
     </ul>
   </nav>
 </header>

@@ -51,7 +51,7 @@ export class HeaderComponent {
     }
   }
 
-  // Control display of search bar and nav menu
+  // Control display of search bar and nav menu when width < 769px 
   displayElement(elementId: string) {
     // Prevent simultaneous display of search bar and menu
     if (elementId == "menu") {
@@ -60,7 +60,7 @@ export class HeaderComponent {
       (document.getElementById('menu'))?.classList.replace('block', 'hidden');
     }
     
-    // Display or hide the desired element
+    // Display or hide the desired element (search bar or menu)
     let element = document.getElementById(elementId);
     if (element?.classList.contains('hidden')) {
       element?.classList.replace('hidden','block');
