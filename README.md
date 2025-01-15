@@ -6,10 +6,13 @@ When they found their craftsman, they can contact him by mail using a form on ou
 This project uses external technologies like :
 - TailwindCSS for the style,
 - FontAwesome for icons,
-- EmailJS to send mails to craftsman and private customers (auto-reply).
+- EmailJS to send mails to craftsman and private customers (auto-reply),
+- Sentry to report errors.
 
 Website URL : https://hyle.alwaysdata.net/
 Project repository : https://github.com/fb-lb/trouve-ton-artisan
+
+For the moment, to access to the 404 page not found you can click on the link (404) in the footer.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
