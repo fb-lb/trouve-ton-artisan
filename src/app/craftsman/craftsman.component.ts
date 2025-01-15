@@ -90,9 +90,10 @@ export class CraftsmanComponent {
       );
       this.form.reset();
       alert('Merci, votre message a bien été envoyé. Un mail récapitulatif vous a été envoyé.');
-    } catch (error) {
+    } catch (error:any) {
+      error.name = "Error in craftsman.component - " + error.name;
       alert("Le service d'envoi d'email est indisponible pour le moment. Nous tentons de le rétablir au plus vite. Merci de votre compréhension.");
-      // transmission of the error report to the Auvergne Rhône Alpes regional office
+      throw error;
     }
   }
 
