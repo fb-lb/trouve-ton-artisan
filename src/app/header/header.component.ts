@@ -55,17 +55,17 @@ export class HeaderComponent {
   displayElement(elementId: string) {
     // Prevent simultaneous display of search bar and menu
     if (elementId == "menu") {
-      (document.getElementById('search-bar'))?.classList.replace('block', 'hidden');
+      (document.getElementById('search-bar'))?.classList.replace('flex', 'hidden');
     } else {
-      (document.getElementById('menu'))?.classList.replace('block', 'hidden');
+      (document.getElementById('menu'))?.classList.replace('flex', 'hidden');
     }
     
     // Display or hide the desired element (search bar or menu)
     let element = document.getElementById(elementId);
     if (element?.classList.contains('hidden')) {
-      element?.classList.replace('hidden','block');
+      element?.classList.replace('hidden','flex');
     } else {
-      element?.classList.replace('block','hidden');
+      element?.classList.replace('flex','hidden');
     }
   }
 }
